@@ -11,55 +11,56 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="7.679204 us"></ZoomEndTime>
-      <Cursor1Time time="3.300000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,000.000 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+      <ValueColumnWidth column_width="112"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
-   <wvobject type="logic" fp_name="/fft_tb/i_clk">
+   <WVObjectSize size="10" />
+   <wvobject fp_name="/fft_tb/i_clk" type="logic">
       <obj_property name="ElementShortName">i_clk</obj_property>
       <obj_property name="ObjectShortName">i_clk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/fft_tb/i_reset">
+   <wvobject fp_name="/fft_tb/i_reset" type="logic">
       <obj_property name="ElementShortName">i_reset</obj_property>
       <obj_property name="ObjectShortName">i_reset</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/fft_tb/i_ce">
+   <wvobject fp_name="/fft_tb/i_ce" type="logic">
       <obj_property name="ElementShortName">i_ce</obj_property>
       <obj_property name="ObjectShortName">i_ce</obj_property>
    </wvobject>
-   <wvobject type="group" fp_name="group687">
+   <wvobject fp_name="group687" type="group">
       <obj_property name="label">FFT</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject type="array" fp_name="/fft_tb/i_sample">
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/fft_tb/i_sample" type="array">
          <obj_property name="ElementShortName">i_sample[31:0]</obj_property>
          <obj_property name="ObjectShortName">i_sample[31:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/fft_tb/o_result">
+      <wvobject fp_name="/fft_tb/o_result" type="array">
          <obj_property name="ElementShortName">o_result[37:0]</obj_property>
          <obj_property name="ObjectShortName">o_result[37:0]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/fft_tb/o_sync">
+      <wvobject fp_name="/fft_tb/o_sync" type="logic">
          <obj_property name="ElementShortName">o_sync</obj_property>
          <obj_property name="ObjectShortName">o_sync</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/fft_tb/sample_count">
+      <wvobject fp_name="/fft_tb/sample_count" type="array">
          <obj_property name="ElementShortName">sample_count[31:0]</obj_property>
          <obj_property name="ObjectShortName">sample_count[31:0]</obj_property>
       </wvobject>
-      <wvobject type="other" fp_name="/fft_tb/theta">
+      <wvobject fp_name="/fft_tb/theta" type="other">
          <obj_property name="ElementShortName">theta</obj_property>
          <obj_property name="ObjectShortName">theta</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/fft_tb/sample_real">
+      <wvobject fp_name="/fft_tb/sample_real" type="array">
          <obj_property name="ElementShortName">sample_real[15:0]</obj_property>
          <obj_property name="ObjectShortName">sample_real[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/fft_tb/i_real">
+      <wvobject fp_name="/fft_tb/i_real" type="array">
          <obj_property name="ElementShortName">i_real[15:0]</obj_property>
          <obj_property name="ObjectShortName">i_real[15:0]</obj_property>
          <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
@@ -76,11 +77,11 @@
          <obj_property name="AnalogHorizLine">0.000000</obj_property>
          <obj_property name="Reversed">false</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/fft_tb/i_imag">
+      <wvobject fp_name="/fft_tb/i_imag" type="array">
          <obj_property name="ElementShortName">i_imag[15:0]</obj_property>
          <obj_property name="ObjectShortName">i_imag[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/fft_tb/o_real">
+      <wvobject fp_name="/fft_tb/o_real" type="array">
          <obj_property name="ElementShortName">o_real[18:0]</obj_property>
          <obj_property name="ObjectShortName">o_real[18:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
@@ -96,45 +97,701 @@
          <obj_property name="AnalogHorizLine">0.000000</obj_property>
          <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/fft_tb/o_imag">
+      <wvobject fp_name="/fft_tb/o_imag" type="array">
          <obj_property name="ElementShortName">o_imag[18:0]</obj_property>
          <obj_property name="ObjectShortName">o_imag[18:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject type="logic" fp_name="/fft_tb/capture_en">
-      <obj_property name="ElementShortName">capture_en</obj_property>
-      <obj_property name="ObjectShortName">capture_en</obj_property>
+   <wvobject fp_name="group204" type="group">
+      <obj_property name="label">stage_32</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/fft_tb/capture_en" type="logic">
+         <obj_property name="ElementShortName">capture_en</obj_property>
+         <obj_property name="ObjectShortName">capture_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/i_clk" type="logic">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/i_reset" type="logic">
+         <obj_property name="ElementShortName">i_reset</obj_property>
+         <obj_property name="ObjectShortName">i_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/i_ce" type="logic">
+         <obj_property name="ElementShortName">i_ce</obj_property>
+         <obj_property name="ObjectShortName">i_ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/i_sync" type="logic">
+         <obj_property name="ElementShortName">i_sync</obj_property>
+         <obj_property name="ObjectShortName">i_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/i_data" type="array">
+         <obj_property name="ElementShortName">i_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/o_data" type="array">
+         <obj_property name="ElementShortName">o_data[33:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data[33:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/o_sync" type="logic">
+         <obj_property name="ElementShortName">o_sync</obj_property>
+         <obj_property name="ObjectShortName">o_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/wait_for_sync" type="logic">
+         <obj_property name="ElementShortName">wait_for_sync</obj_property>
+         <obj_property name="ObjectShortName">wait_for_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/ib_a" type="array">
+         <obj_property name="ElementShortName">ib_a[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ib_a[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/ib_b" type="array">
+         <obj_property name="ElementShortName">ib_b[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ib_b[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/ib_c" type="array">
+         <obj_property name="ElementShortName">ib_c[39:0]</obj_property>
+         <obj_property name="ObjectShortName">ib_c[39:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/ib_sync" type="logic">
+         <obj_property name="ElementShortName">ib_sync</obj_property>
+         <obj_property name="ObjectShortName">ib_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/b_started" type="logic">
+         <obj_property name="ElementShortName">b_started</obj_property>
+         <obj_property name="ObjectShortName">b_started</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/ob_sync" type="logic">
+         <obj_property name="ElementShortName">ob_sync</obj_property>
+         <obj_property name="ObjectShortName">ob_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/ob_a" type="array">
+         <obj_property name="ElementShortName">ob_a[33:0]</obj_property>
+         <obj_property name="ObjectShortName">ob_a[33:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/ob_b" type="array">
+         <obj_property name="ElementShortName">ob_b[33:0]</obj_property>
+         <obj_property name="ObjectShortName">ob_b[33:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/cmem" type="array">
+         <obj_property name="ElementShortName">cmem[0:15][39:0]</obj_property>
+         <obj_property name="ObjectShortName">cmem[0:15][39:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/iaddr" type="array">
+         <obj_property name="ElementShortName">iaddr[4:0]</obj_property>
+         <obj_property name="ObjectShortName">iaddr[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/imem" type="array">
+         <obj_property name="ElementShortName">imem[0:15][31:0]</obj_property>
+         <obj_property name="ObjectShortName">imem[0:15][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/oaddr" type="array">
+         <obj_property name="ElementShortName">oaddr[4:0]</obj_property>
+         <obj_property name="ObjectShortName">oaddr[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/omem" type="array">
+         <obj_property name="ElementShortName">omem[0:15][33:0]</obj_property>
+         <obj_property name="ObjectShortName">omem[0:15][33:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/idle" type="logic">
+         <obj_property name="ElementShortName">idle</obj_property>
+         <obj_property name="ObjectShortName">idle</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/nxt_oaddr" type="array">
+         <obj_property name="ElementShortName">nxt_oaddr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">nxt_oaddr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/pre_ovalue" type="array">
+         <obj_property name="ElementShortName">pre_ovalue[33:0]</obj_property>
+         <obj_property name="ObjectShortName">pre_ovalue[33:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/IWIDTH" type="array">
+         <obj_property name="ElementShortName">IWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/CWIDTH" type="array">
+         <obj_property name="ElementShortName">CWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/OWIDTH" type="array">
+         <obj_property name="ElementShortName">OWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">OWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/LGSPAN" type="array">
+         <obj_property name="ElementShortName">LGSPAN[31:0]</obj_property>
+         <obj_property name="ObjectShortName">LGSPAN[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/BFLYSHIFT" type="array">
+         <obj_property name="ElementShortName">BFLYSHIFT[31:0]</obj_property>
+         <obj_property name="ObjectShortName">BFLYSHIFT[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/OPT_HWMPY" type="logic">
+         <obj_property name="ElementShortName">OPT_HWMPY</obj_property>
+         <obj_property name="ObjectShortName">OPT_HWMPY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/CKPCE" type="array">
+         <obj_property name="ElementShortName">CKPCE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CKPCE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_32/COEFFILE" type="array">
+         <obj_property name="ElementShortName">COEFFILE[87:0]</obj_property>
+         <obj_property name="ObjectShortName">COEFFILE[87:0]</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject type="array" fp_name="/fft_tb/capture_index">
-      <obj_property name="ElementShortName">capture_index[31:0]</obj_property>
-      <obj_property name="ObjectShortName">capture_index[31:0]</obj_property>
+   <wvobject fp_name="group237" type="group">
+      <obj_property name="label">stage_16</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/fft_tb/dut/stage_16/i_clk" type="logic">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/i_reset" type="logic">
+         <obj_property name="ElementShortName">i_reset</obj_property>
+         <obj_property name="ObjectShortName">i_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/i_ce" type="logic">
+         <obj_property name="ElementShortName">i_ce</obj_property>
+         <obj_property name="ObjectShortName">i_ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/i_sync" type="logic">
+         <obj_property name="ElementShortName">i_sync</obj_property>
+         <obj_property name="ObjectShortName">i_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/i_data" type="array">
+         <obj_property name="ElementShortName">i_data[33:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data[33:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/o_data" type="array">
+         <obj_property name="ElementShortName">o_data[35:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data[35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/o_sync" type="logic">
+         <obj_property name="ElementShortName">o_sync</obj_property>
+         <obj_property name="ObjectShortName">o_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/wait_for_sync" type="logic">
+         <obj_property name="ElementShortName">wait_for_sync</obj_property>
+         <obj_property name="ObjectShortName">wait_for_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/ib_a" type="array">
+         <obj_property name="ElementShortName">ib_a[33:0]</obj_property>
+         <obj_property name="ObjectShortName">ib_a[33:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/ib_b" type="array">
+         <obj_property name="ElementShortName">ib_b[33:0]</obj_property>
+         <obj_property name="ObjectShortName">ib_b[33:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/ib_c" type="array">
+         <obj_property name="ElementShortName">ib_c[41:0]</obj_property>
+         <obj_property name="ObjectShortName">ib_c[41:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/ib_sync" type="logic">
+         <obj_property name="ElementShortName">ib_sync</obj_property>
+         <obj_property name="ObjectShortName">ib_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/b_started" type="logic">
+         <obj_property name="ElementShortName">b_started</obj_property>
+         <obj_property name="ObjectShortName">b_started</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/ob_sync" type="logic">
+         <obj_property name="ElementShortName">ob_sync</obj_property>
+         <obj_property name="ObjectShortName">ob_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/ob_a" type="array">
+         <obj_property name="ElementShortName">ob_a[35:0]</obj_property>
+         <obj_property name="ObjectShortName">ob_a[35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/ob_b" type="array">
+         <obj_property name="ElementShortName">ob_b[35:0]</obj_property>
+         <obj_property name="ObjectShortName">ob_b[35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/cmem" type="array">
+         <obj_property name="ElementShortName">cmem[0:7][41:0]</obj_property>
+         <obj_property name="ObjectShortName">cmem[0:7][41:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/iaddr" type="array">
+         <obj_property name="ElementShortName">iaddr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">iaddr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/imem" type="array">
+         <obj_property name="ElementShortName">imem[0:7][33:0]</obj_property>
+         <obj_property name="ObjectShortName">imem[0:7][33:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/oaddr" type="array">
+         <obj_property name="ElementShortName">oaddr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">oaddr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/omem" type="array">
+         <obj_property name="ElementShortName">omem[0:7][35:0]</obj_property>
+         <obj_property name="ObjectShortName">omem[0:7][35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/idle" type="logic">
+         <obj_property name="ElementShortName">idle</obj_property>
+         <obj_property name="ObjectShortName">idle</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/nxt_oaddr" type="array">
+         <obj_property name="ElementShortName">nxt_oaddr[2:0]</obj_property>
+         <obj_property name="ObjectShortName">nxt_oaddr[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/pre_ovalue" type="array">
+         <obj_property name="ElementShortName">pre_ovalue[35:0]</obj_property>
+         <obj_property name="ObjectShortName">pre_ovalue[35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/IWIDTH" type="array">
+         <obj_property name="ElementShortName">IWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/CWIDTH" type="array">
+         <obj_property name="ElementShortName">CWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/OWIDTH" type="array">
+         <obj_property name="ElementShortName">OWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">OWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/LGSPAN" type="array">
+         <obj_property name="ElementShortName">LGSPAN[31:0]</obj_property>
+         <obj_property name="ObjectShortName">LGSPAN[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/BFLYSHIFT" type="array">
+         <obj_property name="ElementShortName">BFLYSHIFT[31:0]</obj_property>
+         <obj_property name="ObjectShortName">BFLYSHIFT[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/OPT_HWMPY" type="logic">
+         <obj_property name="ElementShortName">OPT_HWMPY</obj_property>
+         <obj_property name="ObjectShortName">OPT_HWMPY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/CKPCE" type="array">
+         <obj_property name="ElementShortName">CKPCE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CKPCE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_16/COEFFILE" type="array">
+         <obj_property name="ElementShortName">COEFFILE[87:0]</obj_property>
+         <obj_property name="ObjectShortName">COEFFILE[87:0]</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject type="array" fp_name="/fft_tb/out_frame_real">
-      <obj_property name="ElementShortName">out_frame_real[0:31][18:0]</obj_property>
-      <obj_property name="ObjectShortName">out_frame_real[0:31][18:0]</obj_property>
+   <wvobject fp_name="group270" type="group">
+      <obj_property name="label">stage_8</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/fft_tb/dut/stage_8/i_clk" type="logic">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/i_reset" type="logic">
+         <obj_property name="ElementShortName">i_reset</obj_property>
+         <obj_property name="ObjectShortName">i_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/i_ce" type="logic">
+         <obj_property name="ElementShortName">i_ce</obj_property>
+         <obj_property name="ObjectShortName">i_ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/i_sync" type="logic">
+         <obj_property name="ElementShortName">i_sync</obj_property>
+         <obj_property name="ObjectShortName">i_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/i_data" type="array">
+         <obj_property name="ElementShortName">i_data[35:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data[35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/o_data" type="array">
+         <obj_property name="ElementShortName">o_data[35:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data[35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/o_sync" type="logic">
+         <obj_property name="ElementShortName">o_sync</obj_property>
+         <obj_property name="ObjectShortName">o_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/wait_for_sync" type="logic">
+         <obj_property name="ElementShortName">wait_for_sync</obj_property>
+         <obj_property name="ObjectShortName">wait_for_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/ib_a" type="array">
+         <obj_property name="ElementShortName">ib_a[35:0]</obj_property>
+         <obj_property name="ObjectShortName">ib_a[35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/ib_b" type="array">
+         <obj_property name="ElementShortName">ib_b[35:0]</obj_property>
+         <obj_property name="ObjectShortName">ib_b[35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/ib_c" type="array">
+         <obj_property name="ElementShortName">ib_c[43:0]</obj_property>
+         <obj_property name="ObjectShortName">ib_c[43:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/ib_sync" type="logic">
+         <obj_property name="ElementShortName">ib_sync</obj_property>
+         <obj_property name="ObjectShortName">ib_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/b_started" type="logic">
+         <obj_property name="ElementShortName">b_started</obj_property>
+         <obj_property name="ObjectShortName">b_started</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/ob_sync" type="logic">
+         <obj_property name="ElementShortName">ob_sync</obj_property>
+         <obj_property name="ObjectShortName">ob_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/ob_a" type="array">
+         <obj_property name="ElementShortName">ob_a[35:0]</obj_property>
+         <obj_property name="ObjectShortName">ob_a[35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/ob_b" type="array">
+         <obj_property name="ElementShortName">ob_b[35:0]</obj_property>
+         <obj_property name="ObjectShortName">ob_b[35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/cmem" type="array">
+         <obj_property name="ElementShortName">cmem[0:3][43:0]</obj_property>
+         <obj_property name="ObjectShortName">cmem[0:3][43:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/iaddr" type="array">
+         <obj_property name="ElementShortName">iaddr[2:0]</obj_property>
+         <obj_property name="ObjectShortName">iaddr[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/imem" type="array">
+         <obj_property name="ElementShortName">imem[0:3][35:0]</obj_property>
+         <obj_property name="ObjectShortName">imem[0:3][35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/oaddr" type="array">
+         <obj_property name="ElementShortName">oaddr[2:0]</obj_property>
+         <obj_property name="ObjectShortName">oaddr[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/omem" type="array">
+         <obj_property name="ElementShortName">omem[0:3][35:0]</obj_property>
+         <obj_property name="ObjectShortName">omem[0:3][35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/idle" type="logic">
+         <obj_property name="ElementShortName">idle</obj_property>
+         <obj_property name="ObjectShortName">idle</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/nxt_oaddr" type="array">
+         <obj_property name="ElementShortName">nxt_oaddr[1:0]</obj_property>
+         <obj_property name="ObjectShortName">nxt_oaddr[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/pre_ovalue" type="array">
+         <obj_property name="ElementShortName">pre_ovalue[35:0]</obj_property>
+         <obj_property name="ObjectShortName">pre_ovalue[35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/IWIDTH" type="array">
+         <obj_property name="ElementShortName">IWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/CWIDTH" type="array">
+         <obj_property name="ElementShortName">CWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/OWIDTH" type="array">
+         <obj_property name="ElementShortName">OWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">OWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/LGSPAN" type="array">
+         <obj_property name="ElementShortName">LGSPAN[31:0]</obj_property>
+         <obj_property name="ObjectShortName">LGSPAN[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/BFLYSHIFT" type="array">
+         <obj_property name="ElementShortName">BFLYSHIFT[31:0]</obj_property>
+         <obj_property name="ObjectShortName">BFLYSHIFT[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/OPT_HWMPY" type="logic">
+         <obj_property name="ElementShortName">OPT_HWMPY</obj_property>
+         <obj_property name="ObjectShortName">OPT_HWMPY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/CKPCE" type="array">
+         <obj_property name="ElementShortName">CKPCE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CKPCE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_8/COEFFILE" type="array">
+         <obj_property name="ElementShortName">COEFFILE[79:0]</obj_property>
+         <obj_property name="ObjectShortName">COEFFILE[79:0]</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject type="array" fp_name="/fft_tb/out_frame_imag">
-      <obj_property name="ElementShortName">out_frame_imag[0:31][18:0]</obj_property>
-      <obj_property name="ObjectShortName">out_frame_imag[0:31][18:0]</obj_property>
+   <wvobject fp_name="group306" type="group">
+      <obj_property name="label">stage_4</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/fft_tb/dut/stage_4/i_clk" type="logic">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/i_reset" type="logic">
+         <obj_property name="ElementShortName">i_reset</obj_property>
+         <obj_property name="ObjectShortName">i_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/i_ce" type="logic">
+         <obj_property name="ElementShortName">i_ce</obj_property>
+         <obj_property name="ObjectShortName">i_ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/i_sync" type="logic">
+         <obj_property name="ElementShortName">i_sync</obj_property>
+         <obj_property name="ObjectShortName">i_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/i_data" type="array">
+         <obj_property name="ElementShortName">i_data[35:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data[35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/o_data" type="array">
+         <obj_property name="ElementShortName">o_data[37:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data[37:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/o_sync" type="logic">
+         <obj_property name="ElementShortName">o_sync</obj_property>
+         <obj_property name="ObjectShortName">o_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/wait_for_sync" type="logic">
+         <obj_property name="ElementShortName">wait_for_sync</obj_property>
+         <obj_property name="ObjectShortName">wait_for_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/pipeline" type="array">
+         <obj_property name="ElementShortName">pipeline[2:0]</obj_property>
+         <obj_property name="ObjectShortName">pipeline[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/sum_r" type="array">
+         <obj_property name="ElementShortName">sum_r[18:0]</obj_property>
+         <obj_property name="ObjectShortName">sum_r[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/sum_i" type="array">
+         <obj_property name="ElementShortName">sum_i[18:0]</obj_property>
+         <obj_property name="ObjectShortName">sum_i[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/diff_r" type="array">
+         <obj_property name="ElementShortName">diff_r[18:0]</obj_property>
+         <obj_property name="ObjectShortName">diff_r[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/diff_i" type="array">
+         <obj_property name="ElementShortName">diff_i[18:0]</obj_property>
+         <obj_property name="ObjectShortName">diff_i[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/ob_a" type="array">
+         <obj_property name="ElementShortName">ob_a[37:0]</obj_property>
+         <obj_property name="ObjectShortName">ob_a[37:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/ob_b" type="array">
+         <obj_property name="ElementShortName">ob_b[37:0]</obj_property>
+         <obj_property name="ObjectShortName">ob_b[37:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/ob_b_r" type="array">
+         <obj_property name="ElementShortName">ob_b_r[18:0]</obj_property>
+         <obj_property name="ObjectShortName">ob_b_r[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/ob_b_i" type="array">
+         <obj_property name="ElementShortName">ob_b_i[18:0]</obj_property>
+         <obj_property name="ObjectShortName">ob_b_i[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/iaddr" type="array">
+         <obj_property name="ElementShortName">iaddr[4:0]</obj_property>
+         <obj_property name="ObjectShortName">iaddr[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/imem" type="array">
+         <obj_property name="ElementShortName">imem[0:1][35:0]</obj_property>
+         <obj_property name="ObjectShortName">imem[0:1][35:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/imem_r" type="array">
+         <obj_property name="ElementShortName">imem_r[17:0]</obj_property>
+         <obj_property name="ObjectShortName">imem_r[17:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/imem_i" type="array">
+         <obj_property name="ElementShortName">imem_i[17:0]</obj_property>
+         <obj_property name="ObjectShortName">imem_i[17:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/i_data_r" type="array">
+         <obj_property name="ElementShortName">i_data_r[17:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data_r[17:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/i_data_i" type="array">
+         <obj_property name="ElementShortName">i_data_i[17:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data_i[17:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/omem" type="array">
+         <obj_property name="ElementShortName">omem[0:1][37:0]</obj_property>
+         <obj_property name="ObjectShortName">omem[0:1][37:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/rnd_sum_r" type="array">
+         <obj_property name="ElementShortName">rnd_sum_r[18:0]</obj_property>
+         <obj_property name="ObjectShortName">rnd_sum_r[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/rnd_sum_i" type="array">
+         <obj_property name="ElementShortName">rnd_sum_i[18:0]</obj_property>
+         <obj_property name="ObjectShortName">rnd_sum_i[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/rnd_diff_r" type="array">
+         <obj_property name="ElementShortName">rnd_diff_r[18:0]</obj_property>
+         <obj_property name="ObjectShortName">rnd_diff_r[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/rnd_diff_i" type="array">
+         <obj_property name="ElementShortName">rnd_diff_i[18:0]</obj_property>
+         <obj_property name="ObjectShortName">rnd_diff_i[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/n_rnd_diff_r" type="array">
+         <obj_property name="ElementShortName">n_rnd_diff_r[18:0]</obj_property>
+         <obj_property name="ObjectShortName">n_rnd_diff_r[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/n_rnd_diff_i" type="array">
+         <obj_property name="ElementShortName">n_rnd_diff_i[18:0]</obj_property>
+         <obj_property name="ObjectShortName">n_rnd_diff_i[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/IWIDTH" type="array">
+         <obj_property name="ElementShortName">IWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/OWIDTH" type="array">
+         <obj_property name="ElementShortName">OWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">OWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/LGWIDTH" type="array">
+         <obj_property name="ElementShortName">LGWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">LGWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/INVERSE" type="array">
+         <obj_property name="ElementShortName">INVERSE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">INVERSE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_4/SHIFT" type="array">
+         <obj_property name="ElementShortName">SHIFT[31:0]</obj_property>
+         <obj_property name="ObjectShortName">SHIFT[31:0]</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject type="array" fp_name="/fft_tb/IWIDTH">
-      <obj_property name="ElementShortName">IWIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">IWIDTH[31:0]</obj_property>
+   <wvobject fp_name="group330" type="group">
+      <obj_property name="label">stage_2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/fft_tb/dut/stage_2/i_clk" type="logic">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/i_reset" type="logic">
+         <obj_property name="ElementShortName">i_reset</obj_property>
+         <obj_property name="ObjectShortName">i_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/i_ce" type="logic">
+         <obj_property name="ElementShortName">i_ce</obj_property>
+         <obj_property name="ObjectShortName">i_ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/i_sync" type="logic">
+         <obj_property name="ElementShortName">i_sync</obj_property>
+         <obj_property name="ObjectShortName">i_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/i_val" type="array">
+         <obj_property name="ElementShortName">i_val[37:0]</obj_property>
+         <obj_property name="ObjectShortName">i_val[37:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/o_val" type="array">
+         <obj_property name="ElementShortName">o_val[37:0]</obj_property>
+         <obj_property name="ObjectShortName">o_val[37:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/o_sync" type="logic">
+         <obj_property name="ElementShortName">o_sync</obj_property>
+         <obj_property name="ObjectShortName">o_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/m_r" type="array">
+         <obj_property name="ElementShortName">m_r[18:0]</obj_property>
+         <obj_property name="ObjectShortName">m_r[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/m_i" type="array">
+         <obj_property name="ElementShortName">m_i[18:0]</obj_property>
+         <obj_property name="ObjectShortName">m_i[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/i_r" type="array">
+         <obj_property name="ElementShortName">i_r[18:0]</obj_property>
+         <obj_property name="ObjectShortName">i_r[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/i_i" type="array">
+         <obj_property name="ElementShortName">i_i[18:0]</obj_property>
+         <obj_property name="ObjectShortName">i_i[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/rnd_r" type="array">
+         <obj_property name="ElementShortName">rnd_r[19:0]</obj_property>
+         <obj_property name="ObjectShortName">rnd_r[19:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/rnd_i" type="array">
+         <obj_property name="ElementShortName">rnd_i[19:0]</obj_property>
+         <obj_property name="ObjectShortName">rnd_i[19:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/sto_r" type="array">
+         <obj_property name="ElementShortName">sto_r[19:0]</obj_property>
+         <obj_property name="ObjectShortName">sto_r[19:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/sto_i" type="array">
+         <obj_property name="ElementShortName">sto_i[19:0]</obj_property>
+         <obj_property name="ObjectShortName">sto_i[19:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/wait_for_sync" type="logic">
+         <obj_property name="ElementShortName">wait_for_sync</obj_property>
+         <obj_property name="ObjectShortName">wait_for_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/stage" type="logic">
+         <obj_property name="ElementShortName">stage</obj_property>
+         <obj_property name="ObjectShortName">stage</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/sync_pipe" type="array">
+         <obj_property name="ElementShortName">sync_pipe[1:0]</obj_property>
+         <obj_property name="ObjectShortName">sync_pipe[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/o_r" type="array">
+         <obj_property name="ElementShortName">o_r[18:0]</obj_property>
+         <obj_property name="ObjectShortName">o_r[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/o_i" type="array">
+         <obj_property name="ElementShortName">o_i[18:0]</obj_property>
+         <obj_property name="ObjectShortName">o_i[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/IWIDTH" type="array">
+         <obj_property name="ElementShortName">IWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/OWIDTH" type="array">
+         <obj_property name="ElementShortName">OWIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">OWIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/stage_2/SHIFT" type="array">
+         <obj_property name="ElementShortName">SHIFT[31:0]</obj_property>
+         <obj_property name="ObjectShortName">SHIFT[31:0]</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject type="array" fp_name="/fft_tb/OWIDTH">
-      <obj_property name="ElementShortName">OWIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">OWIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/fft_tb/FFT_SIZE">
-      <obj_property name="ElementShortName">FFT_SIZE[31:0]</obj_property>
-      <obj_property name="ObjectShortName">FFT_SIZE[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/fft_tb/CLK_PERIOD">
-      <obj_property name="ElementShortName">CLK_PERIOD[31:0]</obj_property>
-      <obj_property name="ObjectShortName">CLK_PERIOD[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/fft_tb/AMPLITUDE">
-      <obj_property name="ElementShortName">AMPLITUDE[31:0]</obj_property>
-      <obj_property name="ObjectShortName">AMPLITUDE[31:0]</obj_property>
+   <wvobject fp_name="group343" type="group">
+      <obj_property name="label">revstage</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/fft_tb/dut/revstage/i_clk" type="logic">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/revstage/i_reset" type="logic">
+         <obj_property name="ElementShortName">i_reset</obj_property>
+         <obj_property name="ObjectShortName">i_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/revstage/i_ce" type="logic">
+         <obj_property name="ElementShortName">i_ce</obj_property>
+         <obj_property name="ObjectShortName">i_ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/revstage/i_in" type="array">
+         <obj_property name="ElementShortName">i_in[37:0]</obj_property>
+         <obj_property name="ObjectShortName">i_in[37:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/revstage/o_out" type="array">
+         <obj_property name="ElementShortName">o_out[37:0]</obj_property>
+         <obj_property name="ObjectShortName">o_out[37:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/revstage/o_sync" type="logic">
+         <obj_property name="ElementShortName">o_sync</obj_property>
+         <obj_property name="ObjectShortName">o_sync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/revstage/wraddr" type="array">
+         <obj_property name="ElementShortName">wraddr[5:0]</obj_property>
+         <obj_property name="ObjectShortName">wraddr[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/revstage/rdaddr" type="array">
+         <obj_property name="ElementShortName">rdaddr[5:0]</obj_property>
+         <obj_property name="ObjectShortName">rdaddr[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/revstage/brmem" type="array">
+         <obj_property name="ElementShortName">brmem[0:63][37:0]</obj_property>
+         <obj_property name="ObjectShortName">brmem[0:63][37:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/revstage/in_reset" type="logic">
+         <obj_property name="ElementShortName">in_reset</obj_property>
+         <obj_property name="ObjectShortName">in_reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/revstage/LGSIZE" type="array">
+         <obj_property name="ElementShortName">LGSIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">LGSIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/fft_tb/dut/revstage/WIDTH" type="array">
+         <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>

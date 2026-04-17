@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="laststage_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="laststage_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="7.738 ns"></ZoomStartTime>
+      <ZoomEndTime time="99.138 ns"></ZoomEndTime>
+      <Cursor1Time time="26.457 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="92"></NameColumnWidth>
+      <ValueColumnWidth column_width="148"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/laststage_tb/i_clk" type="logic">
+      <obj_property name="ElementShortName">i_clk</obj_property>
+      <obj_property name="ObjectShortName">i_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/laststage_tb/i_reset" type="logic">
+      <obj_property name="ElementShortName">i_reset</obj_property>
+      <obj_property name="ObjectShortName">i_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/laststage_tb/i_ce" type="logic">
+      <obj_property name="ElementShortName">i_ce</obj_property>
+      <obj_property name="ObjectShortName">i_ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/laststage_tb/i_sync" type="logic">
+      <obj_property name="ElementShortName">i_sync</obj_property>
+      <obj_property name="ObjectShortName">i_sync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/laststage_tb/i_val" type="array">
+      <obj_property name="ElementShortName">i_val[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_val[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/laststage_tb/i_real" type="array">
+      <obj_property name="ElementShortName">i_real[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_real[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/laststage_tb/i_imag" type="array">
+      <obj_property name="ElementShortName">i_imag[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_imag[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/laststage_tb/o_sync" type="logic">
+      <obj_property name="ElementShortName">o_sync</obj_property>
+      <obj_property name="ObjectShortName">o_sync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/laststage_tb/o_val" type="array">
+      <obj_property name="ElementShortName">o_val[37:0]</obj_property>
+      <obj_property name="ObjectShortName">o_val[37:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/laststage_tb/o_real" type="array">
+      <obj_property name="ElementShortName">o_real[18:0]</obj_property>
+      <obj_property name="ObjectShortName">o_real[18:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/laststage_tb/o_imag" type="array">
+      <obj_property name="ElementShortName">o_imag[18:0]</obj_property>
+      <obj_property name="ObjectShortName">o_imag[18:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
