@@ -102,7 +102,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //
-`default_nettype	none
+`timescale 1ns/1ps
 //
 module	butterfly #(
 		// {{{
@@ -259,7 +259,7 @@ module	butterfly #(
 	// to be multiplied, but yet we still need the results in sync
 	// with the answer when it is ready.
 	initial fifo_addr = 0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 		fifo_addr <= 0;
 	else if (i_ce)
@@ -436,7 +436,7 @@ module	butterfly #(
 	// aux_pipeline
 	// {{{
 	initial	aux_pipeline = 0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 		aux_pipeline <= 0;
 	else if (i_ce)
@@ -446,7 +446,7 @@ module	butterfly #(
 	// o_aux
 	// {{{
 	initial o_aux = 1'b0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 		o_aux <= 1'b0;
 	else if (i_ce)

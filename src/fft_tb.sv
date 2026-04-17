@@ -18,7 +18,7 @@ module fft_tb;
     localparam FFT_SIZE = 32;
     localparam CLK_PERIOD = 10; // 10 ns = 100 MHz
     localparam AMPLITUDE = 1000; // Reduced to avoid overflow
-    
+
     // Signals
     logic i_clk = 0;
     logic i_reset = 1;
@@ -26,14 +26,14 @@ module fft_tb;
     logic [2*IWIDTH-1:0] i_sample = 0;
     logic [2*OWIDTH-1:0] o_result;
     logic o_sync;
-    
+
     // Test generation variables
     int sample_count = 0;
     real theta;
+    real k[] = {1.0, 2.0, 3.0, 0.0};
+
     shortint sample_real;
-    // Test mode: 0 = DC, 1 = cosine at bin 1
-    localparam TEST_MODE = 1;
-    
+
     // Instantiate DUT
     fftmain dut (
         .i_clk(i_clk),
@@ -43,80 +43,40 @@ module fft_tb;
         .o_result(o_result),
         .o_sync(o_sync)
     );
-    
+
     // Clock generation
     always #(CLK_PERIOD/2) i_clk = ~i_clk;
-    
+
     // Stimulus
     initial begin
         // Initialize waveform dump
-        $dumpfile("waveform.vcd");
+        $dumpfile("fft_tb.vcd");
         $dumpvars(0, fft_tb);
-        
+
         // Release reset after a few clocks
         #(CLK_PERIOD * 2);
         i_reset = 0;
         i_ce = 1;
-        
-        // Feed 32 samples of test signal
-        for (sample_count = 0; sample_count < FFT_SIZE; sample_count++) begin
-            if (TEST_MODE == 0) begin
-                // DC signal
-                sample_real = AMPLITUDE;
-            end else begin
-                // Cosine at bin 1
-                theta = 2.0 * $acos(-1.0) * sample_count / FFT_SIZE; // 2π * n / N
+
+        // Cosine at bin k, if k==0 -- DC
+        for (int i = 0; i < k.size ; i++)  begin
+            $display("Test No. %d, freq_bin = %f", i , k[i]);
+            // Feed 32 samples of test signal
+            for (sample_count = 0; sample_count < FFT_SIZE; sample_count++) begin
+                theta = 2.0 * $acos(-1.0) * k[i] * sample_count / FFT_SIZE; // 2π * n / N
                 sample_real = shortint'($cos(theta) * AMPLITUDE);
+                i_sample = {sample_real, 16'd0}; // Real part only, imaginary zero
+                $display("Input[%0d]: real=%d", sample_count, sample_real);
+                #CLK_PERIOD;
             end
-            i_sample = {sample_real, 16'd0}; // Real part only, imaginary zero
-            $display("Input[%0d]: real=%d", sample_count, sample_real);
-            #CLK_PERIOD;
         end
 
-        // Feed 32 samples of test signal
-        for (sample_count = 0; sample_count < FFT_SIZE; sample_count++) begin
-            if (TEST_MODE == 0) begin
-                // DC signal
-                sample_real = AMPLITUDE;
-            end else begin
-                // Cosine at bin 1
-                theta = 2.0 * $acos(-1.0) * 2 *sample_count / FFT_SIZE; // 2π * n / N
-                sample_real = shortint'($cos(theta) * AMPLITUDE);
-            end
-            i_sample = {sample_real, 16'd0}; // Real part only, imaginary zero
-            $display("Input[%0d]: real=%d", sample_count, sample_real);
-            #CLK_PERIOD;
-        end
-
-        // Feed 32 samples of test signal
-        for (sample_count = 0; sample_count < FFT_SIZE; sample_count++) begin
-            if (TEST_MODE == 0) begin
-                // DC signal
-                sample_real = AMPLITUDE;
-            end else begin
-                // Cosine at bin 1
-                theta = 2.0 * $acos(-1.0) * 3 *sample_count / FFT_SIZE; // 2π * n / N
-                sample_real = shortint'($cos(theta) * AMPLITUDE);
-            end
-            i_sample = {sample_real, 16'd0}; // Real part only, imaginary zero
-            $display("Input[%0d]: real=%d", sample_count, sample_real);
-            #CLK_PERIOD;
-        end
-
-        // Feed 32 samples of test signal
-        for (sample_count = 0; sample_count < FFT_SIZE; sample_count++) begin
-            sample_real = AMPLITUDE;
-            i_sample = {sample_real, 16'd0}; // Real part only, imaginary zero
-            $display("Input[%0d]: real=%d", sample_count, sample_real);
-            #CLK_PERIOD;
-        end
-        
         // Continue with zeros for another 200 cycles to flush pipeline and observe outputs
         i_sample = 0;
         for (int i = 0; i < 200; i++) begin
             #CLK_PERIOD;
         end
-        
+
         // End simulation
         $display("Simulation completed at time %0t ns", $time);
         $finish;
@@ -131,14 +91,14 @@ module fft_tb;
     logic signed [OWIDTH-1:0] o_real, o_imag;
     assign o_real = o_result[2*OWIDTH-1:OWIDTH];
     assign o_imag = o_result[OWIDTH-1:0];
-    
+
     // Capture FFT output frame
     logic capture_en = 0;
     logic frame_printed = 0;
     int capture_index = 0;
     logic signed [OWIDTH-1:0] out_frame_real [0:31];
     logic signed [OWIDTH-1:0] out_frame_imag [0:31];
-    
+
     always @(posedge i_clk) begin
         if (i_ce) begin
             if (o_sync) begin
@@ -164,7 +124,7 @@ module fft_tb;
                 end
                 $display("=== End Frame ===");
             end
-            
+
             // Always display non-x outputs
             if (o_sync || o_real !== 'x) begin
                 $display("Time %0t: sample=%d, out_real=%d, out_imag=%d, sync=%b", 

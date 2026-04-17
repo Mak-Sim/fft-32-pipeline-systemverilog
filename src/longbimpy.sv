@@ -47,7 +47,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //
-`default_nettype	none
+`timescale 1ns/1ps
 //
 module	longbimpy #(
 		// {{{
@@ -118,11 +118,11 @@ module	longbimpy #(
 	generate begin : ABS
 	if (IW > AW)
 	begin : ABS_AND_ADD_BIT_TO_A
-		always_ff @(posedge i_clk)
+		always @(posedge i_clk)
 		if (i_ce)
 			u_a <= { 1'b0, (i_a[AW-1])?(-i_a):(i_a) };
 	end else begin : ABS_A
-		always_ff @(posedge i_clk)
+		always @(posedge i_clk)
 		if (i_ce)
 			u_a <= (i_a[AW-1])?(-i_a):(i_a);
 	end end endgenerate
@@ -132,7 +132,7 @@ module	longbimpy #(
 	// {{{
 	initial sgn = 0;
 	initial u_b = 0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_ce)
 	begin : ABS_B
 		u_b <= (i_b[BW-1])?(-i_b):(i_b);
@@ -174,7 +174,7 @@ module	longbimpy #(
 	initial r_s    = 0;
 	initial r_a[0] = 0;
 	initial r_b[0] = 0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_ce)
 	begin
 		r_a[0] <= u_a[(IW-1):(2*LUTB)];
@@ -186,7 +186,7 @@ module	longbimpy #(
 	// acc[0]
 	// {{{
 	initial acc[0] = 0;
-	always_ff @(posedge i_clk) // One clk after p[0],p[1] become valid
+	always @(posedge i_clk) // One clk after p[0],p[1] become valid
 	if (i_ce)
 		acc[0] <= { {(IW-LUTB){1'b0}}, pr_a}
 		  +{ {(IW-(2*LUTB)){1'b0}}, pr_b, {(LUTB){1'b0}} };
@@ -202,7 +202,7 @@ module	longbimpy #(
 
 		initial r_a[k+1] = 0;
 		initial r_b[k+1] = 0;
-		always_ff @(posedge i_clk)
+		always @(posedge i_clk)
 		if (i_ce)
 		begin
 			r_a[k+1] <= { {(LUTB){1'b0}},
@@ -235,7 +235,7 @@ module	longbimpy #(
 
 		// Then the accumulate step -- on the next clock
 		initial acc[k+1] = 0;
-		always_ff @(posedge i_clk)
+		always @(posedge i_clk)
 		if (i_ce)
 			acc[k+1] <= acc[k] + {{(IW-LUTB*(k+3)){1'b0}},
 				genp, {(LUTB*(k+2)){1'b0}} };
@@ -247,7 +247,7 @@ module	longbimpy #(
 	// o_r
 	// {{{
 	initial o_r = 0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_ce)
 		o_r <= w_r[(AW+BW-1):0];
 	// }}}

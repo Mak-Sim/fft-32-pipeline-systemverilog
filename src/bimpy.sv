@@ -50,7 +50,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //
-`default_nettype	none
+`timescale 1ns/1ps
 //
 module	bimpy #(
 		// {{{
@@ -80,7 +80,7 @@ module	bimpy #(
 	// o_r
 	// {{{
 	initial o_r = 0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 		o_r <= 0;
 	else if (i_ce)
@@ -88,3 +88,4 @@ module	bimpy #(
 	// }}}
 
 endmodule
+

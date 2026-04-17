@@ -42,7 +42,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //
-`default_nettype	none
+`timescale 1ns/1ps
 //
 module	bitreverse #(
 		// {{{
@@ -80,7 +80,7 @@ module	bitreverse #(
 	// in_reset
 	// {{{
 	initial	in_reset = 1'b1;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 		in_reset <= 1'b1;
 	else if ((i_ce)&&(&wraddr[(LGSIZE-1):0]))
@@ -90,7 +90,7 @@ module	bitreverse #(
 	// wraddr
 	// {{{
 	initial	wraddr = 0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 		wraddr <= 0;
 	else if (i_ce)
@@ -105,12 +105,12 @@ module	bitreverse #(
 	always_ff @(posedge i_clk)
 	if (i_ce) // If (i_reset) we just output junk ... not a problem
 		o_out <= brmem[rdaddr]; // w/o a sync pulse
-	// }}}
+	// }}} 
 
 	// o_sync
 	// {{{
 	initial o_sync = 1'b0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 		o_sync <= 1'b0;
 	else if ((i_ce)&&(!in_reset))

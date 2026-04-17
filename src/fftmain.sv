@@ -71,7 +71,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //
-`default_nettype	none
+`timescale 1ns/1ps
 //
 //
 //
@@ -220,7 +220,8 @@ module fftmain(i_clk, i_reset, i_ce,
 	logic	br_start;
 	logic	r_br_started;
 	initial	r_br_started = 1'b0;
-	always_ff @(posedge i_clk)
+	
+	always @(posedge i_clk)
 	if (i_reset)
 		r_br_started <= 1'b0;
 	else if (i_ce)
@@ -246,7 +247,7 @@ module fftmain(i_clk, i_reset, i_ce,
 
 	// Last clock: Register our outputs, we're done.
 	initial	o_sync  = 1'b0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 		o_sync  <= 1'b0;
 	else if (i_ce)

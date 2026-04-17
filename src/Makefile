@@ -69,7 +69,7 @@ surfer: $(FFT_VCD_FILE)
 clean:
 	rm -f $(FFT_EXEC) $(FFT_VCD_FILE) \
 	      $(LASTSTAGE_EXEC) $(LASTSTAGE_VCD_FILE) \
-	      *.vcd *.log
+	      *.vcd *.log *.jou
 
 # Quick syntax check for all testbenches
 lint:

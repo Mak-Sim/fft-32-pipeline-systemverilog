@@ -60,7 +60,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //
-`default_nettype	none
+`timescale 1ns/1ps
 //
 module	fftstage #(
 		// {{{
@@ -135,7 +135,7 @@ module	fftstage #(
 	// {{{
 	initial wait_for_sync = 1'b1;
 	initial iaddr = 0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 	begin
 		wait_for_sync <= 1'b1;
@@ -165,7 +165,7 @@ module	fftstage #(
 	// be tracked within the butterfly, and used to create the o_sync
 	// value when the results from this output are produced
 	initial ib_sync = 1'b0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 		ib_sync <= 1'b0;
 	else if (i_ce)
@@ -231,7 +231,7 @@ module	fftstage #(
 	initial oaddr     = 0;
 	initial o_sync    = 0;
 	initial b_started = 0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 	begin
 		oaddr     <= 0;

@@ -68,7 +68,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //
-`default_nettype	none
+`timescale 1ns/1ps
 //
 module	qtrstage(i_clk, i_reset, i_ce, i_sync, i_data, o_data, o_sync);
 	parameter	IWIDTH=16, OWIDTH=IWIDTH+1;
@@ -122,7 +122,7 @@ module	qtrstage(i_clk, i_reset, i_ce, i_sync, i_data, o_data, o_sync);
 	assign n_rnd_diff_i = - rnd_diff_i;
 	initial wait_for_sync = 1'b1;
 	initial iaddr = 0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 	begin
 		wait_for_sync <= 1'b1;
@@ -145,7 +145,7 @@ module	qtrstage(i_clk, i_reset, i_ce, i_sync, i_data, o_data, o_sync);
 	// Why not?  Because iaddr will always be zero until after the
 	// first i_ce, so we are safe.
 	initial pipeline = 3'h0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 		pipeline <= 3'h0;
 	else if (i_ce) // is our pipeline process full?  Which stages?
@@ -199,7 +199,7 @@ module	qtrstage(i_clk, i_reset, i_ce, i_sync, i_data, o_data, o_sync);
 	end
 
 	initial	o_sync = 1'b0;
-	always_ff @(posedge i_clk)
+	always @(posedge i_clk)
 	if (i_reset)
 		o_sync <= 1'b0;
 	else if (i_ce)

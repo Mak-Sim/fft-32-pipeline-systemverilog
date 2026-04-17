@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="fft_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="fft_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="7.679204 us"></ZoomEndTime>
+      <Cursor1Time time="3.300000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject type="logic" fp_name="/fft_tb/i_clk">
+      <obj_property name="ElementShortName">i_clk</obj_property>
+      <obj_property name="ObjectShortName">i_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fft_tb/i_reset">
+      <obj_property name="ElementShortName">i_reset</obj_property>
+      <obj_property name="ObjectShortName">i_reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fft_tb/i_ce">
+      <obj_property name="ElementShortName">i_ce</obj_property>
+      <obj_property name="ObjectShortName">i_ce</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group687">
+      <obj_property name="label">FFT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/fft_tb/i_sample">
+         <obj_property name="ElementShortName">i_sample[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_sample[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/fft_tb/o_result">
+         <obj_property name="ElementShortName">o_result[37:0]</obj_property>
+         <obj_property name="ObjectShortName">o_result[37:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/fft_tb/o_sync">
+         <obj_property name="ElementShortName">o_sync</obj_property>
+         <obj_property name="ObjectShortName">o_sync</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/fft_tb/sample_count">
+         <obj_property name="ElementShortName">sample_count[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sample_count[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="other" fp_name="/fft_tb/theta">
+         <obj_property name="ElementShortName">theta</obj_property>
+         <obj_property name="ObjectShortName">theta</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/fft_tb/sample_real">
+         <obj_property name="ElementShortName">sample_real[15:0]</obj_property>
+         <obj_property name="ObjectShortName">sample_real[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/fft_tb/i_real">
+         <obj_property name="ElementShortName">i_real[15:0]</obj_property>
+         <obj_property name="ObjectShortName">i_real[15:0]</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">200</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="AnalogYRangeMin">-1.000000</obj_property>
+         <obj_property name="AnalogYRRangeMax">1.000000</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">10</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+         <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+         <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+         <obj_property name="AnalogHorizLine">0.000000</obj_property>
+         <obj_property name="Reversed">false</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/fft_tb/i_imag">
+         <obj_property name="ElementShortName">i_imag[15:0]</obj_property>
+         <obj_property name="ObjectShortName">i_imag[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/fft_tb/o_real">
+         <obj_property name="ElementShortName">o_real[18:0]</obj_property>
+         <obj_property name="ObjectShortName">o_real[18:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">10</obj_property>
+         <obj_property name="radix_otherWidth">0</obj_property>
+         <obj_property name="CellHeight">200</obj_property>
+         <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+         <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+         <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+         <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+         <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_CLIP</obj_property>
+         <obj_property name="AnalogHorizLine">0.000000</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/fft_tb/o_imag">
+         <obj_property name="ElementShortName">o_imag[18:0]</obj_property>
+         <obj_property name="ObjectShortName">o_imag[18:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fft_tb/capture_en">
+      <obj_property name="ElementShortName">capture_en</obj_property>
+      <obj_property name="ObjectShortName">capture_en</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fft_tb/capture_index">
+      <obj_property name="ElementShortName">capture_index[31:0]</obj_property>
+      <obj_property name="ObjectShortName">capture_index[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fft_tb/out_frame_real">
+      <obj_property name="ElementShortName">out_frame_real[0:31][18:0]</obj_property>
+      <obj_property name="ObjectShortName">out_frame_real[0:31][18:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fft_tb/out_frame_imag">
+      <obj_property name="ElementShortName">out_frame_imag[0:31][18:0]</obj_property>
+      <obj_property name="ObjectShortName">out_frame_imag[0:31][18:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fft_tb/IWIDTH">
+      <obj_property name="ElementShortName">IWIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IWIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fft_tb/OWIDTH">
+      <obj_property name="ElementShortName">OWIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">OWIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fft_tb/FFT_SIZE">
+      <obj_property name="ElementShortName">FFT_SIZE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">FFT_SIZE[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fft_tb/CLK_PERIOD">
+      <obj_property name="ElementShortName">CLK_PERIOD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fft_tb/AMPLITUDE">
+      <obj_property name="ElementShortName">AMPLITUDE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AMPLITUDE[31:0]</obj_property>
+   </wvobject>
+</wave_config>
