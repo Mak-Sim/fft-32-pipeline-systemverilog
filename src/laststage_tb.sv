@@ -64,10 +64,17 @@ module laststage_tb;
     // Clock generation
     always #(CLK_PERIOD/2) i_clk = ~i_clk;
 
+    initial begin
+        // End simulation
+        #(CLK_PERIOD * 1024);
+        $display("Totall time limit");
+        $finish;
+    end
+
     // Main stimulus
     initial begin
         // Initialize waveform dump
-        $dumpfile("laststage.vcd");
+        $dumpfile("laststage_tb.vcd");
         $dumpvars(0, laststage_tb);
 
         // Release reset and enable

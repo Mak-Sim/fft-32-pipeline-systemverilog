@@ -20,12 +20,14 @@ SV_EXCLUDE_TB := $(filter-out %_tb.sv, $(SV_SOURCES))
 FFT_TB_SOURCE := fft_tb.sv
 FFT_TOP_MODULE := fft_tb
 FFT_EXEC := fft.bin
-FFT_VCD_FILE := waveform.vcd
+FFT_VCD_FILE := fft_tb.vcd
+FFT_SURFER_STATE := fft_tb.surf.ron
 
 LASTSTAGE_TB_SOURCE := laststage_tb.sv
 LASTSTAGE_TOP_MODULE := laststage_tb
 LASTSTAGE_EXEC := laststage.bin
-LASTSTAGE_VCD_FILE := laststage_waveform.vcd
+LASTSTAGE_VCD_FILE := laststage_tb.vcd
+LASTSTAGE_SURFER_STATE := laststage_tb.surf.ron
 
 # Generic testbench pattern (for future expansion)
 TB_SOURCES := $(wildcard *_tb.sv)
@@ -44,7 +46,7 @@ $(FFT_EXEC): $(SV_SOURCES)
 	$(IVERILOG) $(IVERILOG_FLAGS) -o $@ -s $(FFT_TOP_MODULE) $(SV_SOURCES)
 
 fft_wave: $(FFT_VCD_FILE)
-	$(SURFER) $(FFT_VCD_FILE) &
+	$(SURFER) -s $(FFT_SURFER_STATE) $(FFT_VCD_FILE) &
 
 # Laststage testbench targets
 laststage_sim: $(LASTSTAGE_VCD_FILE)
@@ -56,7 +58,7 @@ $(LASTSTAGE_EXEC): $(SV_SOURCES)
 	$(IVERILOG) $(IVERILOG_FLAGS) -o $@ -s $(LASTSTAGE_TOP_MODULE) $(SV_SOURCES)
 
 laststage_wave: $(LASTSTAGE_VCD_FILE)
-	$(SURFER) $(LASTSTAGE_VCD_FILE) &
+	$(SURFER) -s $(LASTSTAGE_SURFER_STATE) $(LASTSTAGE_VCD_FILE) &
 
 # Legacy aliases
 sim: fft_sim
