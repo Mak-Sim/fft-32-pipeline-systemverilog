@@ -1,0 +1,111 @@
+module laststage #(
+    parameter IWIDTH = 16,
+    parameter OWIDTH = IWIDTH + 1,
+    parameter SHIFT  = 0
+) (
+    input  logic                 i_clk, i_reset, i_ce, i_sync,
+    input  logic [(2*IWIDTH-1):0] i_val,
+    output logic [(2*OWIDTH-1):0] o_val,
+    output logic                 o_sync
+);
+
+    // -----------------------------------------------------------------------
+    // Внутренние сигналы
+    // -----------------------------------------------------------------------
+    logic signed [(IWIDTH-1):0]  m_r, m_i;          // память: первый отсчёт пары
+    logic signed [(IWIDTH-1):0]  i_r, i_i;           // текущий вход (Re и Im)
+
+    // Промежуточные результаты бабочки (IWIDTH+1 бит — рост на 1 из-за сложения)
+    logic signed [(IWIDTH):0]    rnd_r, rnd_i;       // выход на convround (сумма или разность)
+    logic signed [(IWIDTH):0]    sto_r, sto_i;       // хранение разности до следующего такта
+
+    logic                        wait_for_sync;       // ждём первый i_sync
+    logic                        stage;               // 0 = первый такт пары, 1 = второй такт
+    logic [1:0]                  sync_pipe;           // задержка sync для выравнивания с o_val
+    logic signed [(OWIDTH-1):0]  o_r, o_i;           // финальные выходы (после округления)
+
+    // -----------------------------------------------------------------------
+    // Распаковка комплексного входа
+    // -----------------------------------------------------------------------
+    assign i_r = i_val[(2*IWIDTH-1):(IWIDTH)];
+    assign i_i = i_val[(IWIDTH-1):0];
+
+    // -----------------------------------------------------------------------
+    // TODO 1: Управление сигналами wait_for_sync и stage
+    //
+    // Условия:
+    //   - После сброса: wait_for_sync=1, stage=0
+    //   - При (i_ce && (не ждём синхронизации ИЛИ пришёл i_sync) && stage==0):
+    //       * Снять wait_for_sync
+    //       * Перевести stage в 1
+    //   - В остальных случаях при i_ce:
+    //       * Перевести stage обратно в 0
+    //
+    // -----------------------------------------------------------------------
+    initial wait_for_sync = 1'b1;
+    initial stage         = 1'b0;
+    always_ff @(posedge i_clk)
+    if (i_reset) begin
+        wait_for_sync <= 1'b1;
+        stage         <= 1'b0;
+    end else if (i_ce) begin
+        // TODO: реализуйте логику переключения stage и wait_for_sync
+        // ...
+    end
+
+    // -----------------------------------------------------------------------
+    // TODO 2: Конвейер синхросигнала sync_pipe
+    //
+    // sync_pipe[0] <- i_sync (на такте i_ce)
+    // sync_pipe[1] <- sync_pipe[0]
+    // o_sync       <- sync_pipe[1]
+    //
+    // Это необходимо, потому что между i_sync и первым валидным o_val
+    // проходит 2 такта (хранение + вычисление + округление через convround).
+    // -----------------------------------------------------------------------
+    initial sync_pipe = 0;
+    always_ff @(posedge i_clk)
+    if (i_reset)
+        sync_pipe <= 0;
+    else if (i_ce)
+        sync_pipe <= /* TODO */;
+
+    initial o_sync = 1'b0;
+    always_ff @(posedge i_clk)
+    if (i_reset)
+        o_sync <= 1'b0;
+    else if (i_ce)
+        o_sync <= /* TODO: какой бит sync_pipe? */;
+
+    // -----------------------------------------------------------------------
+    // TODO 3: Логика вычисления бабочки
+    //
+    // При stage=0 (первый такт пары):
+    //   * Сохранить входной отсчёт: m_r <= i_r, m_i <= i_i
+    //   * Вывести разность, накопленную на прошлом шаге: rnd_r <= sto_r, rnd_i <= sto_i
+    //
+    // При stage=1 (второй такт пары):
+    //   * Вычислить сумму:     rnd_r <= m_r + i_r,  rnd_i <= m_i + i_i
+    //   * Вычислить разность:  sto_r <= m_r - i_r,  sto_i <= m_i - i_i
+    //
+    // Обратите внимание: rnd_r / rnd_i имеют ширину IWIDTH+1 бит (знаковое расширение).
+    // -----------------------------------------------------------------------
+    always_ff @(posedge i_clk)
+    if (i_ce) begin
+        if (!stage) begin
+            // TODO: сохранение и вывод разности
+        end else begin
+            // TODO: вычисление суммы и разности
+        end
+    end
+
+    // -----------------------------------------------------------------------
+    // Округление и формирование выхода
+    // (эта часть уже реализована — не изменяйте)
+    // -----------------------------------------------------------------------
+    convround #(IWIDTH+1, OWIDTH, SHIFT) do_rnd_r (i_clk, i_ce, rnd_r, o_r);
+    convround #(IWIDTH+1, OWIDTH, SHIFT) do_rnd_i (i_clk, i_ce, rnd_i, o_i);
+
+    assign o_val = { o_r, o_i };
+
+endmodule

@@ -7,5 +7,3 @@ fft32_project/
 *.jou
 *.log
 *.str
-
-laststage.sv
