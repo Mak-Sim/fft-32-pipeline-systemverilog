@@ -163,8 +163,6 @@ o_val:   (junk) y[0]  y[1]  y[2]  y[3]  y[4]  ...
 Ниже приведен код для последней ступени конвейера БПФ.  Необходимо заполнить все секции, помеченные `// TODO`:
 
 ```systemverilog
-`default_nettype none
-
 module laststage #(
     parameter IWIDTH = 16,
     parameter OWIDTH = IWIDTH + 1,
